@@ -1,5 +1,5 @@
 class Recipe < ActiveRecord::Base
-  has_many :recipe_to_cookbook_relationships
+  has_many :recipe_to_cookbook_relationships, :class_name => 'RecipeToCookbookRelationships'
   has_many :cookbooks, through: :recipe_to_cookbook_relationships
 
   has_many :ingredient_to_recipe_relationships, :class_name => 'IngredientToRecipeRelationships'
