@@ -1,5 +1,5 @@
 class IngredientsController < ApplicationController
-  before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
+  before_action :set_ingredient, only: [:show, :edit, :update]
 
   # GET /ingredients
   # GET /ingredients.json
@@ -51,15 +51,6 @@ class IngredientsController < ApplicationController
     end
   end
 
-  # DELETE /ingredients/1
-  # DELETE /ingredients/1.json
-  def destroy
-    @ingredient.destroy
-    respond_to do |format|
-      format.html { redirect_to ingredients_url }
-      format.json { head :no_content }
-    end
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
