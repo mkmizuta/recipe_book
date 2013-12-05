@@ -27,12 +27,14 @@ class CookbooksController < ApplicationController
   # POST /cookbooks.json
   def create
     @cookbook = Cookbook.new(cookbook_params)
+
     params[:cookbook][:recipes].each do |recipe_id|
       next if recipe_id.to_i == 0
       recipe = Recipe.find(recipe_id.to_i)
-
       @cookbook.recipes << recipe
     end
+
+
 
     respond_to do |format|
       if @cookbook.save
