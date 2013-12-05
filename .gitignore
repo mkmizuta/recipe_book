@@ -14,4 +14,4 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-.DS_Store
+.DS_Store # normally hidden to mac users; what mac uses to track where icons are in finder window
