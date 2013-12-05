@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class IngredientToRecipeRelationshipsTest < ActiveSupport::TestCase
+class IngredientToRecipeRelationshipTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
