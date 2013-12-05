@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20131204234926) do
   end
 
   create_table "ingredient_to_recipe_relationships", force: true do |t|
+    t.integer  "recipe_id"
+    t.integer  "ingredient_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -31,6 +33,8 @@ ActiveRecord::Schema.define(version: 20131204234926) do
   end
 
   create_table "recipe_to_cookbook_relationships", force: true do |t|
+    t.integer  "recipe_id"
+    t.integer  "cookbook_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
