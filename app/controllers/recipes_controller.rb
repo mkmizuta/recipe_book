@@ -26,10 +26,18 @@ class RecipesController < ApplicationController
   # POST /recipes
   # POST /recipes.json
   def create
+
+    puts "beginning of create"
+
     @recipe = Recipe.new(recipe_params)
+
+    puts "did i get this far?"
+    puts @recipe
 
     params[:recipe][:ingredients].each do |ingredient_id|
       next if ingredient_id.to_i == 0
+
+      puts ingredient_id 
 
       ingredient = Ingredient.find(ingredient_id.to_i)
 
