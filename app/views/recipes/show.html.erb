@@ -15,5 +15,20 @@
   <%= @recipe.process %>
 </p>
 
+<p> Ingredients:</p>
+
+	<% @recipe.ingredients.each do |ingredient| %>
+     <%= link_to ingredient.name, ingredient_path(ingredient.id) %>
+     <br>
+  <% end %>
+
+
+<p> Found in these cookbooks:</p>
+
+	<% @recipe.cookbooks.each do |cookbook| %>
+     <%= link_to cookbook.name, cookbook_path(cookbook.id) %>
+     <br>
+  <% end %>
+
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>
