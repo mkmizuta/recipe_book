@@ -4,7 +4,7 @@ class CookbooksController < ApplicationController
   # GET /cookbooks
   # GET /cookbooks.json
   def index
-    @cookbooks = Cookbook.all
+    @cookbooks = Cookbook.search(params[:search])
   end
 
   # GET /cookbooks/1

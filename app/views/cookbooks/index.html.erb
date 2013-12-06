@@ -1,5 +1,12 @@
 <h1>Listing cookbooks</h1>
 
+<%= form_tag cookbooks_path, :method => 'get' do %>
+<p>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil %>
+</p>
+<% end %>
+
 <table class="table table-striped">
   <thead>
     <tr>

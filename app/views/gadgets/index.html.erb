@@ -1,5 +1,12 @@
 <h1>Listing gadgets</h1>
 
+<%= form_tag gadgets_path, :method => 'get' do %>
+<p>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil %>
+</p>
+<% end %>
+
 <table class="table table-condensed">
   <thead>
     <tr>
