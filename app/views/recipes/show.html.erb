@@ -22,6 +22,12 @@
      <br>
   <% end %>
 
+<p> Gadgets:</p>
+
+  <% @recipe.gadgets.each do |gadget| %>
+     <%= link_to gadget.name, gadget_path(gadget.id) %>
+     <br>
+  <% end %>
 
 <p> Found in these cookbooks:</p>
 

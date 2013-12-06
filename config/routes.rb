@@ -1,4 +1,6 @@
 RecipeBook::Application.routes.draw do
+  resources :gadgets
+
   root :to => 'welcome#index'
   resources :ingredients
 

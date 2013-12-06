@@ -34,8 +34,6 @@ class CookbooksController < ApplicationController
       @cookbook.recipes << recipe
     end
 
-
-
     respond_to do |format|
       if @cookbook.save
         format.html { redirect_to @cookbook, notice: 'Cookbook was successfully created.' }

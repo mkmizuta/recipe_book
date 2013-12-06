@@ -16,11 +16,13 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     @ingredients = Ingredient.all.collect { |p| [p.name, p.id] }
+    @gadgets = Gadget.all.collect { |p| [p.name, p.id] }
   end
 
   # GET /recipes/1/edit
   def edit
     @ingredients = Ingredient.all.collect { |p| [p.name, p.id] }
+    @gadgets = Gadget.all.collect { |p| [p.name, p.id] }
   end
 
   # POST /recipes
@@ -33,6 +35,12 @@ class RecipesController < ApplicationController
       next if ingredient_id.to_i == 0
       ingredient = Ingredient.find(ingredient_id.to_i)
       @recipe.ingredients << ingredient
+    end
+
+    params[:recipe][:gadgets].each do |gadget_id|
+      next if gadget_id.to_i == 0
+      gadget = Gadget.find(gadget_id.to_i)
+      @recipe.gadgets << gadget
     end
 
     respond_to do |format|

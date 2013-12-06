@@ -4,4 +4,7 @@ class Recipe < ActiveRecord::Base
 
   has_many :ingredient_to_recipe_relationship, :class_name => 'IngredientToRecipeRelationship'
   has_many :ingredients, through: :ingredient_to_recipe_relationship
+
+  has_many :gadget_to_recipe_relationship
+  has_many :gadgets, through: :gadget_to_recipe_relationship
 end

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RecipeBook</title>
+  <title>Recipe Book</title>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.css" rel="stylesheet">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -22,20 +22,19 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/recipes">Recipes</a></li>
-            <li><a href="/ingredients">Ingredients</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cookbooks<b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
+                <% @allcookbooks.each do |cookbook| %>
+                  <li><a href="/cookbooks/<%= cookbook.id %>"><%= cookbook.name %></a></li>
+                <% end %>
+                 <li class="divider"></li>
+                 <li><a href="/cookbooks/new">Create a new Cookbook</a></li>
               </ul>
             </li>
+            <li><a href="/recipes">Recipes</a></li>
+            <li><a href="/ingredients">Ingredients</a></li>
+            <li><a href="/gadgets">Gadgets</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -46,12 +45,8 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-<div>
-
-<br><br><br><br>
-
-
-<%= yield %>
+<div style="margin: 80px 45px">
+  <%= yield %>
 </div>
 </body>
 </html>

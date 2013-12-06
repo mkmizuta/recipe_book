@@ -23,8 +23,14 @@
     <%= f.label :process %><br>
     <%= f.text_area :process %>
   </div>
-
-  <%= f.select(:ingredients, @ingredients, {}, {:multiple => true}) %>
+  <div class="field">
+    <%= f.label :ingedients %><br>
+    <%= f.select(:ingredients, @ingredients, {}, {:multiple => true}) %>
+  </div>
+  <div class="field">
+    <%= f.label :gadgets %><br>
+    <%= f.select(:gadgets, @gadgets, {}, {:multiple => true}) %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>
