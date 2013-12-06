@@ -1,0 +1,26 @@
+<h1>Welcome to the cook book</h1>
+
+
+<div id="recipe-box">
+	<ul><h2>recipes</h2>
+		<% @recipes.each do |recipe| %>
+     <li><%= link_to recipe.name, recipe_path(recipe.id) %></li>
+     <br>
+  <% end %>
+</div>
+
+<div id="ingredients-box">
+	<ul><h2>ingredients</h2>
+		<% @ingredients.each do |ingredient| %>
+     <li><%= link_to ingredient.name, ingredient_path(ingredient.id) %></li>
+     <br>
+  <% end %>
+</div>
+
+<div id="cookbooks-box">
+	<ul><h2>cookbooks</h2>
+		<% @cookbooks.each do |cookbook| %>
+     <li><%= link_to cookbook.name, cookbook_path(cookbook.id) %></li>
+     <br>
+  <% end %>
+</div>
