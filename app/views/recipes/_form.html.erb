@@ -15,23 +15,27 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+  <br>
   <div class="field">
     <%= f.label :vegetarian %><br>
     <%= f.check_box :vegetarian %>
   </div>
+  <br>
   <div class="field">
     <%= f.label :process %><br>
     <%= f.text_area :process %>
   </div>
+  <br>
   <div class="field">
-    <%= f.label :ingedients %><br>
+    <%= f.label :ingredients %><br>
     <%= f.select(:ingredients, @ingredients, {}, {:multiple => true}) %>
   </div>
+  <br>
   <div class="field">
     <%= f.label :gadgets %><br>
     <%= f.select(:gadgets, @gadgets, {}, {:multiple => true}) %>
   </div>
-
+  <br>
   <div class="actions">
     <%= f.submit %>
   </div>

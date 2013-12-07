@@ -5,14 +5,20 @@
   <%= @cookbook.name %>
 </p>
 
-<p> Recipes:<br>
-	
+<br>
+<br>
+<br>
+
+<p> 
+  <strong>Recipes:</strong>
+</p>
 	<% @cookbook.recipes.each do |recipe| %>
      <%= link_to recipe.name, recipe_path(recipe.id) %>
      <br>
   <% end %>
 
 <br>
-
+<br>
+<br>
 <%= link_to 'Edit', edit_cookbook_path(@cookbook) %> |
 <%= link_to 'Back', cookbooks_path %>

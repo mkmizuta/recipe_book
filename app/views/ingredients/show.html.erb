@@ -5,13 +5,17 @@
   <%= @ingredient.name %>
 </p>
 
-<p> Found in these recipes:</p>
+<p>
+  <strong>Found in these recipes:</strong>
+</p>
 
 	<% @ingredient.recipes.each do |recipe| %>
      <%= link_to recipe.name, recipe_path(recipe.id) %>
      <br>
   <% end %>
 
-
+<br>
+<br>
+<br>
 <%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
 <%= link_to 'Back', ingredients_path %>
