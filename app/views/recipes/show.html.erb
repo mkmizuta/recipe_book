@@ -12,29 +12,39 @@
 
 <p>
   <strong>Process:</strong>
-  <%= @recipe.process %>
+  <ul>
+    <li><%= @recipe.process %></li>
+  </ul>
 </p>
 
-<p> Ingredients:</p>
+<p>
+  <strong>Ingredients:</strong>
+</p>
 
 	<% @recipe.ingredients.each do |ingredient| %>
      <%= link_to ingredient.name, ingredient_path(ingredient.id) %>
      <br>
   <% end %>
 
-<p> Gadgets:</p>
+<p>
+  <strong>Gadgets:</strong>
+</p>
 
   <% @recipe.gadgets.each do |gadget| %>
      <%= link_to gadget.name, gadget_path(gadget.id) %>
      <br>
   <% end %>
 
-<p> Found in these cookbooks:</p>
-
-	<% @recipe.cookbooks.each do |cookbook| %>
+<p>
+  <strong>Found in these cookbooks:</strong>
+</p>
+  <% @recipe.cookbooks.each do |cookbook| %>
      <%= link_to cookbook.name, cookbook_path(cookbook.id) %>
+  
      <br>
   <% end %>
-
+<br>
+<br>
+<br>
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>

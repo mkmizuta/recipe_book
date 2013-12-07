@@ -10,12 +10,16 @@
   <%= @gadget.purpose %>
 </p>
 
-<p> Used in these recipes:</p>
+<p>
+  <strong>Used in these recipes:</strong>
+</p>
 
   <% @gadget.recipes.each do |recipe| %>
      <%= link_to recipe.name, recipe_path(recipe.id) %>
      <br>
   <% end %>
-
+<br>
+<br>
+<br>
 <%= link_to 'Edit', edit_gadget_path(@gadget) %> |
 <%= link_to 'Back', gadgets_path %>

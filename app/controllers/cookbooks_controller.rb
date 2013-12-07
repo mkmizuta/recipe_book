@@ -52,7 +52,7 @@ class CookbooksController < ApplicationController
     respond_to do |format|
       if @cookbook.update(cookbook_params)
         
-        params[:cookbook][:recipe].each do |recipe_id|
+        params[:cookbook][:recipes].each do |recipe_id|
           next if recipe_id.to_i == 0
           recipe = Recipe.find(recipe_id.to_i)
           @cookbook.recipes << recipe

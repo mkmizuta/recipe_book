@@ -15,9 +15,11 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-
- <%= f.select(:recipes, @recipes, {}, {:multiple => true}) %>
-
+  <p>
+    <strong>Recipes:</strong>
+  </p>
+    <%= f.select(:recipes, @recipes, {}, {:multiple => true}) %>
+  <p>
   <div class="actions">
     <%= f.submit %>
   </div>
